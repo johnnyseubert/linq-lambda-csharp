@@ -37,34 +37,47 @@ namespace LinqWithLambda {
 
             Console.WriteLine("Products that are from Tier 1 and Price lower then $900.0");
 
-            var r1 = products.Where(x => x.Category.Tier == 1 && x.Price < 900.0);
+            //var r1 = products.Where(x => x.Category.Tier == 1 && x.Price < 900.0);
+            var r1 = from p in products where p.Category.Tier == 1 && p.Price < 900.0 select p;
             Print("Tier 1 and price < 900:", r1);
 
-            var r2 = products.Where(prod => prod.Category.Name == "Tools").Select(prod => prod.Name);
+            
+            //var r2 = products.Where(prod => prod.Category.Name == "Tools").Select(prod => prod.Name);
+            var r2 = from p in products where p.Category.Name == "Tools" select p.Name;
             Print("Category name = Tools", r2);
 
-            var r3 = products.Where(prod => prod.Name[0] == 'C').Select(prod => new { prod.Name, prod.Price, CategoryName = prod.Category.Name });
-
+            
+            //var r3 = products.Where(prod => prod.Name[0] == 'C').Select(prod => new { prod.Name, prod.Price, CategoryName = prod.Category.Name });
+            var r3 = from p in products where p.Name[0] == 'C' select new {p.Name, p.Price, CategoryName = p.Category.Name};
             Print("Names started with 'C':", r3);
 
-            var r4 = products.Where(prod => prod.Category.Tier == 1).OrderBy(prod => prod.Price).ThenBy(prod => prod.Name);
+            
+            //var r4 = products.Where(prod => prod.Category.Tier == 1).OrderBy(prod => prod.Price).ThenBy(prod => prod.Name);
+            var r4 = from p in products where p.Category.Tier == 1 orderby p.Name orderby p.Price select p.Name;
             Print("Tier 1 ordered by price then by name", r4);
 
-            var r5 = r4.Skip(2).Take(4);
+            
+            //var r5 = r4.Skip(2).Take(4);
+            var r5 = (from p in r4 select p).Skip(2).Take(4);
             Print("Tier 1 ordered by price then by name skip 2 take 4", r5);
 
+            
             var r6 = products.Where(prod => prod.Id == 3).SingleOrDefault();
             Console.WriteLine("Single or Default: "+ r6);
 
+            
             var r10 = products.Max(p => p.Price);
             Console.WriteLine("Max Price: " + r10);
 
+            
             var r11 = products.Min(p => p.Price);
             Console.WriteLine("Min price: " + r11);
 
+            
             var r12 = products.Where(p => p.Category.Id == 1).Sum(p => p.Price);
             Console.WriteLine("Sum prices: " + r12);
 
+            
             var r13 = products.Where(p => p.Category.Id == 1).Average(p => p.Price);
             Console.WriteLine("Average prices: " + r13);
 
