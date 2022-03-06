@@ -1,0 +1,8 @@
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\bin\Debug\LinqWithLambda.exe.config
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\bin\Debug\LinqWithLambda.exe
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\bin\Debug\LinqWithLambda.pdb
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\obj\Debug\LinqWithLambda.csproj.AssemblyReference.cache
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\obj\Debug\LinqWithLambda.csproj.SuggestedBindingRedirects.cache
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\obj\Debug\LinqWithLambda.csproj.CoreCompileInputs.cache
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\obj\Debug\LinqWithLambda.exe
+C:\projetos\C#\LinqWithLambda\LinqWithLambda\obj\Debug\LinqWithLambda.pdb
